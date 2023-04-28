@@ -10560,7 +10560,9 @@ _0224D75E:
 	ldr r0, [sp]
 	bl ov12_0223B740
 	cmp r0, #0
-	bne _0224D7C6
+	; force set mode
+	;bne _0224D7C6
+	b _0224D7C6
 	mov r1, #0x4f
 	ldr r0, [sp, #4]
 	lsl r1, r1, #2
