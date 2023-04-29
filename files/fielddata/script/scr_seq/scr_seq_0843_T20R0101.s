@@ -172,14 +172,16 @@ scr_seq_T20R0101_012:
 	npc_msg msg_0543_T20R0101_00007
 	play_fanfare SEQ_ME_POKEGET
 	wait_fanfare
-	touchscreen_menu_hide
+	; skip straight to nicknaming
+	;touchscreen_menu_hide
 	buffer_mon_species_name 1, 0
-	npc_msg msg_0543_T20R0101_00008
-	getmenuchoice VAR_SPECIAL_RESULT
-	closemsg
-	compare VAR_SPECIAL_RESULT, 0
-	call_if_eq _02EE
-	touchscreen_menu_show
+	;npc_msg msg_0543_T20R0101_00008
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;closemsg
+	;compare VAR_SPECIAL_RESULT, 0
+	;call_if_eq _02EE
+	call _02EE
+	;touchscreen_menu_show
 	scrcmd_602 0
 	scrcmd_603
 	scrcmd_604 55

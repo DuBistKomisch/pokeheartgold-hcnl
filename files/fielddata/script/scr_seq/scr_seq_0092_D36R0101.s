@@ -1791,12 +1791,13 @@ _1A51:
 	play_fanfare SEQ_ME_SHINKAOME
 	npc_msg msg_0115_D36R0101_00040
 	wait_fanfare
-	touchscreen_menu_hide
-	npc_msg msg_0115_D36R0101_00045
-	getmenuchoice VAR_SPECIAL_RESULT
-	compare VAR_SPECIAL_RESULT, 1
-	goto_if_eq _1AC5
-	closemsg
+	; skip straight to nicknaming
+	;touchscreen_menu_hide
+	;npc_msg msg_0115_D36R0101_00045
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;compare VAR_SPECIAL_RESULT, 1
+	;goto_if_eq _1AC5
+	;closemsg
 	get_party_count VAR_TEMP_x4009
 	subvar VAR_TEMP_x4009, 1
 	setvar VAR_TEMP_x400A, 0
@@ -1813,7 +1814,7 @@ _1A51:
 _1AC5:
 	npc_msg msg_0115_D36R0101_00051
 	closemsg
-	touchscreen_menu_show
+	;touchscreen_menu_show
 	compare VAR_TEMP_x4005, 3
 	goto_if_ne _1AE7
 	apply_movement obj_D36R0101_gsoldman1, _1E64

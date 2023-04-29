@@ -668,13 +668,15 @@ _09A2:
 	give_mon SPECIES_GIRATINA, 1, 112, 1, 26, VAR_SPECIAL_RESULT
 	setvar VAR_UNK_4103, 3
 _09B6:
-	touchscreen_menu_hide
-	npc_msg msg_0146_D51R0201_00032
-	getmenuchoice VAR_SPECIAL_RESULT
-	closemsg
+	; skip straight to nicknaming
+	;touchscreen_menu_hide
+	;npc_msg msg_0146_D51R0201_00032
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;closemsg
 	scrcmd_815 0
-	compare VAR_SPECIAL_RESULT, 0
-	call_if_eq _0BB2
+	;compare VAR_SPECIAL_RESULT, 0
+	;call_if_eq _0BB2
+	call _0BB2
 	compare VAR_SCENE_SINJOH_MYSTRI_ROOM, 14
 	goto_if_eq _0A4D
 	apply_movement obj_D51R0201_champion, _0D28

@@ -48,17 +48,19 @@ _007F:
 	play_fanfare SEQ_ME_POKEGET
 	wait_fanfare
 	give_mon SPECIES_TENTACOOL, 15, 0, 0, 0, VAR_SPECIAL_RESULT
-	npc_msg msg_0575_T24PC0101_00006
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	compare VAR_SPECIAL_RESULT, 1
-	goto_if_ne _00BC
+	; skip straight to nicknaming
+	;npc_msg msg_0575_T24PC0101_00006
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;compare VAR_SPECIAL_RESULT, 1
+	;goto_if_ne _00BC
+	goto _00BC
 	touchscreen_menu_show
 	closemsg
 	goto _00E0
 
 _00BC:
-	closemsg
+	;closemsg
 	scrcmd_815 0
 	fade_screen 6, 1, 0, RGB_BLACK
 	wait_fade

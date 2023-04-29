@@ -176,12 +176,14 @@ _02B6:
 	npc_msg msg_0537_T11R0701_00021
 	wait_fanfare
 	give_mon VAR_SPECIAL_x8004, 5, 0, 0, 0, VAR_SPECIAL_RESULT
-	touchscreen_menu_hide
-	npc_msg msg_0537_T11R0701_00025
-	getmenuchoice VAR_SPECIAL_RESULT
-	compare VAR_SPECIAL_RESULT, 0
-	goto_if_eq _0351
-	touchscreen_menu_show
+	; skip straight to nicknaming
+	;touchscreen_menu_hide
+	;npc_msg msg_0537_T11R0701_00025
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;compare VAR_SPECIAL_RESULT, 0
+	;goto_if_eq _0351
+	goto _0351
+	;touchscreen_menu_show
 _02F3:
 	npc_msg msg_0537_T11R0701_00022
 	closemsg
@@ -218,7 +220,7 @@ _0346:
 	end
 
 _0351:
-	closemsg
+	;closemsg
 	get_party_count VAR_SPECIAL_RESULT
 	subvar VAR_SPECIAL_RESULT, 1
 	setvar VAR_TEMP_x4000, 0

@@ -35,13 +35,15 @@ _0063:
 	play_fanfare SEQ_ME_POKEGET
 	wait_fanfare
 	give_mon SPECIES_TYROGUE, 10, 0, 0, 0, VAR_SPECIAL_RESULT
-	npc_msg msg_0121_D38R0104_00005
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	closemsg
-	compare VAR_SPECIAL_RESULT, 0
-	call_if_eq _00A6
-	touchscreen_menu_show
+	; skip straight to nicknaming
+	;npc_msg msg_0121_D38R0104_00005
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;closemsg
+	;compare VAR_SPECIAL_RESULT, 0
+	;call_if_eq _00A6
+	call _00A6
+	;touchscreen_menu_show
 _0097:
 	setflag FLAG_GOT_TYROGUE_FROM_KARATE_KING
 	npc_msg msg_0121_D38R0104_00003

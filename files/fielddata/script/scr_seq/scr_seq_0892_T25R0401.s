@@ -37,15 +37,15 @@ _004B:
 	npc_msg msg_0586_T25R0401_00002
 	play_fanfare SEQ_ME_POKEGET
 	wait_fanfare
-	npc_msg msg_0586_T25R0401_00007
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	compare VAR_SPECIAL_RESULT, 0
-	goto_if_eq _00A0
-	compare VAR_SPECIAL_RESULT, 1
-	goto_if_ge _00C6
+	;npc_msg msg_0586_T25R0401_00007
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;compare VAR_SPECIAL_RESULT, 0
+	;goto_if_eq _00A0
+	;compare VAR_SPECIAL_RESULT, 1
+	;goto_if_ge _00C6
 _00A0:
-	closemsg
+	;closemsg
 	setvar VAR_TEMP_x4000, 0
 	fade_screen 6, 1, 0, RGB_BLACK
 	wait_fade
@@ -56,7 +56,7 @@ _00C6:
 	npc_msg msg_0586_T25R0401_00003
 	wait_button_or_walk_away
 	closemsg
-	touchscreen_menu_show
+	;touchscreen_menu_show
 	releaseall
 	end
 

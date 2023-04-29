@@ -330,13 +330,14 @@ _043B:
 
 _045E:
 	buffer_species_name 1, VAR_TEMP_x4002, 2, 1
-	npc_msg msg_0246_00043
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	touchscreen_menu_show
-	closemsg
-	compare VAR_SPECIAL_RESULT, 1
-	goto_if_eq _049E
+	; skip straight to nicknaming
+	;npc_msg msg_0246_00043
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;touchscreen_menu_show
+	;closemsg
+	;compare VAR_SPECIAL_RESULT, 1
+	;goto_if_eq _049E
 	fade_screen 6, 1, 0, RGB_BLACK
 	wait_fade
 	nickname_input 255, VAR_SPECIAL_RESULT

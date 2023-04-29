@@ -572,12 +572,14 @@ _0852:
 	wait_fanfare
 	give_mon VAR_SPECIAL_x8004, 5, 0, 0, 0, VAR_SPECIAL_RESULT
 	buffer_species_name 1, VAR_SPECIAL_x8004, 0, 0
-	npc_msg msg_0451_T01R0301_00049
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	closemsg
-	compare VAR_SPECIAL_RESULT, 0
-	call_if_eq _0929
+	; skip straight to nicknaming
+	;npc_msg msg_0451_T01R0301_00049
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;closemsg
+	;compare VAR_SPECIAL_RESULT, 0
+	;call_if_eq _0929
+	call _0929
 	touchscreen_menu_show
 	get_person_coords 0, VAR_TEMP_x4000, VAR_TEMP_x4001
 	compare VAR_TEMP_x4000, 8

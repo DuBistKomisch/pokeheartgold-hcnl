@@ -336,13 +336,14 @@ _04C3:
 	goto_if_set FLAG_FAILED_DRAGONS_DEN_QUIZ, _04F0
 	set_mon_move VAR_SPECIAL_x8005, 0, MOVE_EXTREME_SPEED
 _04F0:
-	npc_msg msg_0130_D44R0103_00032
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	touchscreen_menu_show
-	compare VAR_SPECIAL_RESULT, 1
-	goto_if_ne _050E
-	goto _052E
+	; skip straight to nicknaming
+	;npc_msg msg_0130_D44R0103_00032
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;touchscreen_menu_show
+	;compare VAR_SPECIAL_RESULT, 1
+	;goto_if_ne _050E
+	;goto _052E
 
 _050E:
 	closemsg

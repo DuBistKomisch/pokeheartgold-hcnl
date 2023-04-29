@@ -350,13 +350,14 @@ _0575:
 	give_mon VAR_UNK_407F, 20, 0, 0, 0, VAR_SPECIAL_RESULT
 	scrcmd_420 116
 	setvar VAR_UNK_407F, 0
-	npc_msg msg_0464_T03R0101_00009
-	touchscreen_menu_hide
-	getmenuchoice VAR_SPECIAL_RESULT
-	touchscreen_menu_show
-	closemsg
-	compare VAR_SPECIAL_RESULT, 1
-	goto_if_eq _0600
+	; skip straight to nicknaming
+	;npc_msg msg_0464_T03R0101_00009
+	;touchscreen_menu_hide
+	;getmenuchoice VAR_SPECIAL_RESULT
+	;touchscreen_menu_show
+	;closemsg
+	;compare VAR_SPECIAL_RESULT, 1
+	;goto_if_eq _0600
 	get_party_count VAR_TEMP_x4000
 	subvar VAR_TEMP_x4000, 1
 	fade_screen 6, 1, 0, RGB_BLACK
