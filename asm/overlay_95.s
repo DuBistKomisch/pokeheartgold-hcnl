@@ -1489,8 +1489,11 @@ _021E64A0:
 	cmp r0, #0
 	bne _021E6586
 	ldr r0, [r4, #0x60]
-	add r0, r0, #1
+	; skip straight to nicknaming
+	;add r0, r0, #1
+	add r0, r0, #3
 	str r0, [r4, #0x60]
+	b _021E6586
 _021E64AE:
 	ldr r0, [r4, #0xc]
 	lsl r0, r0, #0x18
@@ -1542,7 +1545,9 @@ _021E650E:
 	cmp r0, #1
 	beq _021E6520
 	cmp r0, #2
-	beq _021E652E
+	; skip straight to nicknaming
+	;beq _021E652E
+	beq _021E6520
 _021E651E:
 	b _021E6586
 _021E6520:
@@ -1770,8 +1775,11 @@ _021E66F2:
 	cmp r0, #0
 	bne _021E67D8
 	ldr r0, [r4, #0x60]
-	add r0, r0, #1
+	; skip straight to nicknaming
+	;add r0, r0, #1
+	add r0, r0, #3
 	str r0, [r4, #0x60]
+	b _021E67D8
 _021E6700:
 	ldr r0, [r4, #0xc]
 	lsl r0, r0, #0x18
@@ -1823,7 +1831,9 @@ _021E6760:
 	cmp r0, #1
 	beq _021E6772
 	cmp r0, #2
-	beq _021E6780
+	; skip straight to nicknaming
+	;beq _021E6780
+	beq _021E6772
 _021E6770:
 	b _021E67D8
 _021E6772:
