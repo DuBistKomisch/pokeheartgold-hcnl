@@ -2420,7 +2420,9 @@ _02246C84:
 	bl sub_02003B44
 	cmp r0, #0
 	bne _02246D4C
-	mov r0, #0x12
+	; skip straight to nicknaming
+	;mov r0, #0x12
+	mov r0, #0x13
 	str r0, [r4, #0x28]
 	ldr r0, [r4]
 	bl ov12_0223AB34
@@ -2469,7 +2471,8 @@ _02246CEA:
 	mov r1, #0
 	bl ov12_0225682C
 	cmp r0, #0xff
-	bne _02246D0A
+	;bne _02246D0A
+	b _02246D0A
 	mov r0, #0x16
 	add sp, #0x158
 	str r0, [r4, #0x28]
