@@ -4224,6 +4224,14 @@ _02084A9E:
 	bl PlaySE
 	b _02084C4E
 _02084AE4:
+	; don't allow saving if empty
+	mov r1, #0x56
+	lsl r1, r1, #2
+	ldrh r1, [r4, r1]
+	cmp r1, #0
+	; jumping directly to _02084C4E is out of range
+	beq sub_02084884_indirect_exit
+	;
 	ldr r0, _02084BF0 ; =0x000005C4
 	ldr r0, [r4, r0]
 	bl sub_020164C4
@@ -4253,6 +4261,8 @@ _02084AE4:
 	add sp, #0x10
 	mov r0, #3
 	pop {r4, r5, r6, pc}
+sub_02084884_indirect_exit:
+	b _02084C4E
 _02084B26:
 	ldr r0, _02084BFC ; =0x0000045C
 	mov r1, #5
