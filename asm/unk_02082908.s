@@ -736,6 +736,32 @@ _02082EE0: .word 0x000001DE
 _02082EE4: .word 0x0000FFFF
 	thumb_func_end sub_02082EC0
 
+	thumb_func_start stremptylen
+stremptylen:
+	push {r4, r5, r6}
+	mov r6, #0xef
+	lsl r6, r6, #1 ; =0x000001DE
+	mov r5, #1
+	mov r3, #0
+	add r2, r1, #0
+	lsl r2, r2, #1
+	add r2, r2, r0 ; r2 = r0 + r1 << 1, end of string
+stremptylen_loop:
+	cmp r0, r2 ; if r0 == r2
+	beq stremptylen_done
+	ldrh r4, [r0]
+	cmp r4, r6 ; if *r0 == 0x1de
+	beq stremptylen_next
+	add r5, r3, #0
+stremptylen_next:
+	add r0, r0, #2
+	b stremptylen_loop
+stremptylen_done:
+	add r0, r5, #0
+	pop {r4, r5, r6}
+	bx lr
+	thumb_func_end stremptylen
+
 	thumb_func_start sub_02082EE8
 sub_02082EE8: ; 0x02082EE8
 	push {r4, r5, r6, r7, lr}
@@ -4225,10 +4251,13 @@ _02084A9E:
 	b _02084C4E
 _02084AE4:
 	; don't allow saving if empty
+	add r0, r4, #0
+	add r0, #0xd8
 	mov r1, #0x56
 	lsl r1, r1, #2
 	ldrh r1, [r4, r1]
-	cmp r1, #0
+	bl stremptylen
+	cmp r0, #1
 	; jumping directly to _02084C4E is out of range
 	beq sub_02084884_indirect_exit
 	;
